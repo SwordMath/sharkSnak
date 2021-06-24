@@ -11,8 +11,8 @@ food = Actor("food")
 food.pos = 500,270
 bluefood = Actor("bluefood")
 bluefood.pos = 530,300
-swordy = Actor("swordy")
-swordy.pos = 600,250
+shark = Actor("shark")
+shark.pos = 600,250
 mine = Actor("mine")
 mine.pos = 30,570
 game_over = False
@@ -32,7 +32,7 @@ time.sleep(1)
 def draw():
     
     screen.fill("navy")
-    swordy.draw()
+    shark.draw()
     mine.draw()
     food.draw()
     bluefood.draw()
@@ -58,14 +58,14 @@ def update():
     mine.x += 5
     trash.x += 5
     if keyboard.up:
-        swordy.y -= 6
+        shark.y -= 6
     if keyboard.down:
-        swordy.y += 6
+        shark.y += 6
     
-    bluefood_yum = swordy.colliderect(bluefood)
-    mined = swordy.colliderect(mine)
-    food_collected = swordy.colliderect(food)
-    trashed = swordy.colliderect(trash)
+    bluefood_yum = shark.colliderect(bluefood)
+    mined = shark.colliderect(mine)
+    food_collected = shark.colliderect(food)
+    trashed = shark.colliderect(trash)
     if bluefood_yum:
         scores += 2
         bluefood.y = randint(5,750)
